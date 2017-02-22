@@ -1,0 +1,1321 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Atomist Developer Platform">
+      
+      
+      
+        <meta name="author" content="The Atomist Team">
+      
+      
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.1, mkdocs-material-1.0.5">
+    
+    
+      
+        <title>Build Your Own Development Automation - The Atomist Documentation</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-9c62e3c932.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-02ce7adcc2.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="green" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="The Atomist Documentation" class=" md-logo  md-header-nav__button">
+          
+            <img src="../../images/atomist-logo-horiz-reversed.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Getting Started
+                </span>
+              
+            
+            Build Your Own Development Automation
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+              
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+            
+          </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <i class=" md-logo  md-nav__button">
+      
+        <img src="../../images/atomist-logo-horiz-reversed.svg">
+      
+    </i>
+    The Atomist Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  <li class="md-nav__item">
+    
+      <a href="../.." title="Welcome to Atomist" class="md-nav__link">
+        Welcome to Atomist
+      </a>
+    
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../" title="Introduction" class="md-nav__link">
+        Introduction
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../before-you-get-started/" title="Before You Get Started" class="md-nav__link">
+        Before You Get Started
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../invite-atomist-to-slack/" title="Invite Atomist to Slack" class="md-nav__link">
+        Invite Atomist to Slack
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../connect-atomist-to-github/" title="Connect Atomist to GitHub" class="md-nav__link">
+        Connect Atomist to GitHub
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../putting-atomist-to-work/" title="Putting Atomist to Work on Your Projects" class="md-nav__link">
+        Putting Atomist to Work on Your Projects
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../connect-atomist-to-ci/" title="Connect Atomist to CI" class="md-nav__link">
+        Connect Atomist to CI
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Build Your Own Development Automation" class="md-nav__link md-nav__link--active">
+      Build Your Own Development Automation
+    </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Quick Starts
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-3">
+        Quick Starts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../quick-starts/" title="Introduction" class="md-nav__link">
+        Introduction
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../quick-starts/buttons/" title="Buttons" class="md-nav__link">
+        Buttons
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../quick-starts/bot/" title="Atomist Bot" class="md-nav__link">
+        Atomist Bot
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../quick-starts/rug-cli/" title="Rug CLI" class="md-nav__link">
+        Rug CLI
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../quick-starts/rug-typescript/" title="Rug TypeScript" class="md-nav__link">
+        Rug TypeScript
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-4">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../rug/why-and-what-is-rug/" title="Why and What is Rug?" class="md-nav__link">
+        Why and What is Rug?
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../rug/rug-dsl/" title="Rug Language" class="md-nav__link">
+        Rug Language
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../rug/rug-archive/" title="What Goes in a Rug Archive?" class="md-nav__link">
+        What Goes in a Rug Archive?
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../rug/rug-lifecycle/" title="A Day in the Life of a Rug Archive" class="md-nav__link">
+        A Day in the Life of a Rug Archive
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Rug CLI
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-4-5">
+        Rug CLI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../rug/rug-cli/" title="Introduction" class="md-nav__link">
+        Introduction
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../rug/rug-cli/rug-cli-install/" title="Rug CLI Installation" class="md-nav__link">
+        Rug CLI Installation
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Reference Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-5">
+        Reference Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/" title="Introduction" class="md-nav__link">
+        Introduction
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-5-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/" title="Introduction" class="md-nav__link">
+        Introduction
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/rug-tests/" title="Rug Tests" class="md-nav__link">
+        Rug Tests
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/rug-editors/" title="Rug Editors" class="md-nav__link">
+        Rug Editors
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/rug-generators/" title="Rug Generators" class="md-nav__link">
+        Rug Generators
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/rug-templates/" title="Rug Templates" class="md-nav__link">
+        Rug Templates
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/rug-predicates/" title="Rug Predicates" class="md-nav__link">
+        Rug Predicates
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/rug-path-expressions/" title="Rug Path Expressions" class="md-nav__link">
+        Rug Path Expressions
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/rug-microgrammars/" title="Rug Microgrammars" class="md-nav__link">
+        Rug Microgrammars
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2-9" type="checkbox" id="nav-5-2-9">
+    
+    <label class="md-nav__link" for="nav-5-2-9">
+      Rug Language Extensions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-5-2-9">
+        Rug Language Extensions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/" title="Introduction" class="md-nav__link">
+        Introduction
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-clj-project/" title="CljProject" class="md-nav__link">
+        CljProject
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-c-sharp-file/" title="CSharpFile" class="md-nav__link">
+        CSharpFile
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-docker-file/" title="DockerFile" class="md-nav__link">
+        DockerFile
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-elm-module/" title="ElmModule" class="md-nav__link">
+        ElmModule
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-every-pom/" title="EveryPom" class="md-nav__link">
+        EveryPom
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-file/" title="File" class="md-nav__link">
+        File
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-java-project/" title="JavaProject" class="md-nav__link">
+        JavaProject
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-java-source/" title="JavaSource" class="md-nav__link">
+        JavaSource
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-java-type/" title="JavaType" class="md-nav__link">
+        JavaType
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-json/" title="Json" class="md-nav__link">
+        Json
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-line/" title="Line" class="md-nav__link">
+        Line
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-pom/" title="Pom" class="md-nav__link">
+        Pom
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-project/" title="Project" class="md-nav__link">
+        Project
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-properties/" title="Properties" class="md-nav__link">
+        Properties
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-python-file/" title="PythonFile" class="md-nav__link">
+        PythonFile
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-python-requirements-txt/" title="PythonRequirementsTxt" class="md-nav__link">
+        PythonRequirementsTxt
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-rug-archive-project/" title="RugArchiveProject" class="md-nav__link">
+        RugArchiveProject
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-rug-file/" title="RugFile" class="md-nav__link">
+        RugFile
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-scala-file/" title="ScalaFile" class="md-nav__link">
+        ScalaFile
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-services/" title="Services" class="md-nav__link">
+        Services
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-spring-boot-project/" title="SpringBootProject" class="md-nav__link">
+        SpringBootProject
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-xml/" title="Xml" class="md-nav__link">
+        Xml
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/extensions/rug-extension-yml/" title="Yml" class="md-nav__link">
+        Yml
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/escape/rug-javascript/" title="Escaping Rug into JavaScript" class="md-nav__link">
+        Escaping Rug into JavaScript
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/rug-cli-commands/" title="Rug CLI Command Reference" class="md-nav__link">
+        Rug CLI Command Reference
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/rug/rug-conventions/" title="Rug Conventions" class="md-nav__link">
+        Rug Conventions
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../reference-docs/system-integrations/" title="Atomist Integrations" class="md-nav__link">
+        Atomist Integrations
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-rug-handlers-project-for-your-new-automation" title="Create a new Rug Handlers project for your new automation" class="md-nav__link">
+    Create a new Rug Handlers project for your new automation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-your-new-handler" title="Writing your new handler" class="md-nav__link">
+    Writing your new handler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publish-your-new-handler" title="Publish your new handler" class="md-nav__link">
+    Publish your new handler
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-and-configuring-the-rug-cli" title="Installing and Configuring the Rug CLI" class="md-nav__link">
+    Installing and Configuring the Rug CLI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publishing-your-handlers-project-using-the-rug-cli" title="Publishing your handlers project using the Rug CLI" class="md-nav__link">
+    Publishing your handlers project using the Rug CLI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seeing-your-new-handler-in-action" title="Seeing your new handler in action" class="md-nav__link">
+    Seeing your new handler in action
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#congratulations-youve-completed-the-getting-started-guide-for-atomist" title="Congratulations, you've completed the Getting Started guide for Atomist!" class="md-nav__link">
+    Congratulations, you've completed the Getting Started guide for Atomist!
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+               
+              
+                
+                  <h1>Build Your Own Development Automation</h1>
+                
+                <p>Right! You've seen some of the automation between issues, commits, builds that we provide out-of-the-box and now let's automate an action.</p>
+<p>In Atomist that means writing a <code>handler</code> in TypeScript using the Atomist's <a href="../../reference-docs/rug">Rug</a> support. The <code>handler</code> will be triggered by a certain type of activity that Atomist can detect, in this example case you want to notify the team when an issue labeled 'bug' gets fixed.</p>
+<h3 id="create-a-new-rug-handlers-project-for-your-new-automation">Create a new Rug Handlers project for your new automation<a class="headerlink" href="#create-a-new-rug-handlers-project-for-your-new-automation" title="Permanent link">&para;</a></h3>
+<p>The first thing you need is a project for your code. Although you can add Atomist Rug code to any existing project by simply adding a <code>.atomist</code> directory along with a few support files in this case we'll create and publish a new project for your first Atomist Rug development automation.</p>
+<p>Ask the Bot to list out the project generator that you need by typing <code>@atomist generator rug</code> and select the <code>NewHandlersProject</code> generator:</p>
+<div class="ss-container">
+  <img src="../images/new-rug-handlers-project-button.png" alt="NewHandlersProject generator" class="ss-small">
+</div>
+
+<p>Click on the <code>Create project</code> button and enter the following information to create your new project:</p>
+<div class="ss-container">
+  <img src="../images/create-handlers-project-flow.png" alt="Creating the handlers project" class="ss-small">
+</div>
+
+<p>Once done you can click on <code>Generate project</code> in the project generation summary:</p>
+<div class="ss-container">
+  <img src="../images/create-handlers-project-summary.png" alt="New handlers project summary" class="ss-small">
+</div>
+
+<p>Then <code>@atomist</code> will create the new project in your GitHub organization:</p>
+<div class="ss-container">
+  <img src="../images/new-handlers-project-created.png" alt="New handlers project created message" class="ss-small">
+</div>
+
+<p>Also <code>@atomist</code> will have created a new <code>#handlers</code> channel in Slack that's tied to that project that shows some initial setup commits made by the project generator:</p>
+<div class="ss-container">
+  <img src="../images/handlers-slack-channel-created.png" alt="Handlers slack channel initialised" class="ss-small">
+</div>
+
+<p>Clone the new <code>handlers</code> project locally and, because we're using TypeScript, change directory into the <code>.atomist</code> directory of the local <code>handlers</code> project and enter <code>npm install</code> to get the TypeScript library dependencies installed:</p>
+<div class="admonition note">
+<p>To develop your rugs in TypeScript you will need <a href="https://nodejs.org"><code>node.js</code> and <code>npm</code></a> installed locally.</p>
+</div>
+<div class="codehilite"><pre><span></span>&gt; npm install
+/.../handlers/.atomist
+├─┬ @atomist/github@0.2.0
+│ └── @atomist/rug@0.10.0
+├── @atomist/rug@0.12.0
+└─┬ @atomist/travis@0.6.1
+  └── @atomist/rug@0.10.0
+</pre></div>
+
+
+<p>Now it's time to write your new handler.</p>
+<h3 id="writing-your-new-handler">Writing your new <code>handler</code><a class="headerlink" href="#writing-your-new-handler" title="Permanent link">&para;</a></h3>
+<p>The <code>handlers</code> project you just generated contains a number of pre-existing handlers that you can take inspiration from. For our purposes we only want one new handler and the closest example in the <code>handlers</code> project is <code>.atomist/handlers/IssueHandler.ts</code>.</p>
+<p>The generated <code>handlers</code> project contains a whole host of sample handlers and executors, including all the default handlers that you've seen in action already. You need to keep those handlers in this project as when you publish this Rug archive you will effectively override the default handlers, and we don't want to lose that functionality we've already seen.</p>
+<p>In a new <code>.atomist/handlers/CloseIssueThanks.ts</code> file enter the following handler code:</p>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span><span class="nx">Atomist</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@atomist/rug/operations/Handler&#39;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">TreeNode</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@atomist/rug/tree/PathExpression&#39;</span>
+<span class="kr">declare</span> <span class="kd">var</span> <span class="nx">atomist</span>: <span class="kt">Atomist</span>
+
+<span class="nx">atomist</span><span class="p">.</span><span class="nx">on</span><span class="o">&lt;</span><span class="nx">TreeNode</span><span class="p">,</span> <span class="nx">TreeNode</span><span class="o">&gt;</span><span class="p">(</span><span class="s2">&quot;/Issue()/belongsTo::Repo()/channel::ChatChannel()&quot;</span><span class="p">,</span> <span class="nx">m</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">issue</span> <span class="o">=</span> <span class="nx">m</span><span class="p">.</span><span class="nx">root</span><span class="p">()</span> <span class="kr">as</span> <span class="nx">any</span>
+
+   <span class="k">if</span> <span class="p">(</span><span class="nx">issue</span><span class="p">.</span><span class="nx">state</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;closed&quot;</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">return</span>
+   <span class="p">}</span>
+
+   <span class="nx">atomist</span><span class="p">.</span><span class="nx">messageBuilder</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">say</span><span class="p">(</span><span class="s2">&quot;Thanks for closing this issue on &quot;</span> <span class="o">+</span>
+         <span class="nx">issue</span><span class="p">.</span><span class="nx">belongsTo</span><span class="p">().</span><span class="nx">name</span><span class="p">())</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">issue</span><span class="p">.</span><span class="nx">belongsTo</span><span class="p">().</span><span class="nx">channel</span><span class="p">().</span><span class="nx">id</span><span class="p">()).</span><span class="nx">send</span><span class="p">()</span>
+<span class="p">})</span>
+</pre></div>
+
+
+<p>Now it's time to publish and test your new handler.</p>
+<blockquote>
+<p><strong><em>NOTE</em></strong>:</p>
+</blockquote>
+<div class="admonition note">
+<p>At the moment you can't test handlers locally and instead you need to publish and test your handler is invoked from it's results in Atomist.</p>
+</div>
+<h3 id="publish-your-new-handler">Publish your new <code>handler</code><a class="headerlink" href="#publish-your-new-handler" title="Permanent link">&para;</a></h3>
+<p>To make Atomist aware of your new <code>handler</code> you need to publish the <code>handler</code> project. This is often done via continuous integration but for our purposes here you're going to see how it's done manually using the <a href="../../rug/rug-cli">Rug CLI</a>.</p>
+<h4 id="installing-and-configuring-the-rug-cli">Installing and Configuring the Rug CLI<a class="headerlink" href="#installing-and-configuring-the-rug-cli" title="Permanent link">&para;</a></h4>
+<p>Firstly make sure you've installed the latest Rug CLI for your platform. Then in order to publish new rugs you need to configure the <a href="../../rug/rug-cli">Rug CLI</a> with the credentials it needs to push your rugs to Atomists. To see this problem you can try to run the command <code>rug repositories configure</code> and you should see:</p>
+<div class="codehilite"><pre><span></span>&gt; rug repositories configure
+
+No token configured. Please run repositories login before running this command.
+
+Run the following <span class="nb">command</span> <span class="k">for</span> usage help:
+  rug repositories configure --help
+</pre></div>
+
+
+<p>To configure the Rug CLI you need to execute the <code>rug repositories login</code> command providing your GitHub credentials:</p>
+<div class="codehilite"><pre><span></span>&gt; rug repositories login
+
+
+The Rug CLI needs your GitHub login to identify you.
+
+The <span class="nb">command</span> will create a GitHub Personal Access Token with scope <span class="s1">&#39;read:org&#39;</span>
+which you can revoke any <span class="nb">time</span> on https://github.com/settings/tokens.  Your
+password will not be displayed or stored. Your sensitive information will not
+be sent to Atomist<span class="p">;</span> only to api.github.com.
+
+  → Username : .....
+  → Password : .....
+
+  Please provide a MFA code
+  → MFA code : .....
+
+Successfully logged in to GitHub and stored token in ~/.atomist/cli.yml
+</pre></div>
+
+
+<blockquote>
+<p><strong><em>NOTE</em></strong>: No passwords are stored, only a unique personal access token with org/read scope. Also if you are using 2 Factor Authentication with GitHub you will be prompted for the <code>MFA code</code> as shown above.</p>
+</blockquote>
+<p>Now when you execute <code>rug repositories configure</code> you should see the Rug CLI configured with your team's unique repository:</p>
+<div class="codehilite"><pre><span></span>&gt; rug repositories configure
+
+→ Repositories
+  &lt;unique identifier of your team&#39;s repository&gt;
+    &lt;your unique team&#39;s repository url here&gt;
+</pre></div>
+
+
+<p>You're now all set to publish your <code>handlers</code> project.</p>
+<h4 id="publishing-your-handlers-project-using-the-rug-cli">Publishing your <code>handlers</code> project using the Rug CLI<a class="headerlink" href="#publishing-your-handlers-project-using-the-rug-cli" title="Permanent link">&para;</a></h4>
+<p>The Rug CLI has the <code>publish</code> command to publish a Rug archive from your local copy. Execute the <code>rug publish</code> command from inside your <code>handlers</code> project directory:</p>
+<div class="codehilite"><pre><span></span>&gt; rug publish
+Resolving dependencies <span class="k">for</span> antifragilesoftware:handlers:0.1.0 ← <span class="nb">local</span> completed
+Invoking TypeScript Compiler on ts script sources                                                                   
+  Created .atomist/handlers/CloseIssueThanksHandler.js.map                                                          
+  Created .atomist/handlers/CloseIssueThanksHandler.js                                                              
+Processing script sources completed
+Loading antifragilesoftware:handlers:0.1.0 ← <span class="nb">local</span> into runtime completed
+  Created META-INF/maven/antifragilesoftware/handlers/pom.xml                                                       
+  Created .atomist/manifest.yml                                                                                     
+  Created .atomist/metadata.json                                                                                    
+Generating archive metadata completed
+  Uploading antifragilesoftware/handlers/0.1.0/handlers-0.1.0.zip → t3v0s7ss2 <span class="o">(</span><span class="m">186</span> kb<span class="o">)</span> succeeded          
+  Uploading antifragilesoftware/handlers/0.1.0/handlers-0.1.0.pom → t3v0s7ss2 <span class="o">(</span><span class="m">927</span> bytes<span class="o">)</span> succeeded       
+  Uploading antifragilesoftware/handlers/0.1.0/handlers-0.1.0-metadata.json → t3v0s7ss2 <span class="o">(</span><span class="m">762</span> bytes<span class="o">)</span> succeeded
+  Downloading antifragilesoftware/handlers/maven-metadata.xml ← t3v0s7ss2 <span class="o">(</span><span class="m">382</span> bytes<span class="o">)</span> succeeded           
+  Uploading antifragilesoftware/handlers/maven-metadata.xml → t3v0s7ss2 <span class="o">(</span><span class="m">334</span> bytes<span class="o">)</span> succeeded             
+Publishing archive into remote repository completed
+
+→ Archive
+  ~/code/src/github.com/antifragilesoftware/handlers/.atomist/target/handlers-0.1.0.zip <span class="o">(</span><span class="m">186</span> kb in <span class="m">165</span> files<span class="o">)</span>
+
+→ URL
+  https://atomist.jfrog.io/atomist/T3V0S7SS2/antifragilesoftware/handlers/0.1.0/handlers-0.1.0.zip
+
+Successfully published archive <span class="k">for</span> antifragilesoftware:handlers:0.1.0
+</pre></div>
+
+
+<p>Your new <code>handlers</code> rugs are now ready for action in your Atomist environment. To test that everything has published correctly you can execute <code>rug search</code> and you should see your Rug archive listed just for you:</p>
+<div class="codehilite"><pre><span></span>&gt; rug search
+Searching https://api.atomist.com/catalog                                                                         
+Searching catalogs completed
+
+→ Remote Archives <span class="o">(</span><span class="m">38</span> archives found<span class="o">)</span>
+yourorg:handlers <span class="o">[</span>private<span class="o">]</span> <span class="o">(</span><span class="m">0</span>.1.0<span class="o">)</span>
+...
+</pre></div>
+
+
+<h3 id="seeing-your-new-handler-in-action">Seeing your new <code>handler</code> in action<a class="headerlink" href="#seeing-your-new-handler-in-action" title="Permanent link">&para;</a></h3>
+<p>Now you can give your new <code>CloseIssueThanksHandler</code> handler a spin! Head back to the <code>#sprocket</code> channel and you should see a button to <code>Close</code> the issue we created earlier:</p>
+<div class="ss-container">
+  <img src="../images/close-button-on-issue.png" alt="Issue ready to be closed" class="ss-small">
+</div>
+
+<p>Click on <code>Close</code> (you could also close the issue in GitHub if you prefer) and several things will happen. Firstly <code>@atomist</code> will indicate with a message that the issue has been edited...</p>
+<div class="ss-container">
+  <img src="../images/close-issue-edited-response.png" alt="Issue edited response" class="ss-small">
+</div>
+
+<p>... then the panel for the issue in Slack will be updated with a <code>Reopen</code> button ...</p>
+<div class="ss-container">
+  <img src="../images/reopen-button-displayed.png" alt="Reopen issue displayed" class="ss-small">
+</div>
+
+<p>... and finally your new handler will be invoked and the "thanks" message will be displayed!</p>
+<div class="ss-container">
+  <img src="../images/new-handler-message-displayed.png" alt="New handler thank-you message displayed" class="ss-small">
+</div>
+
+<p>There, you did it! You just created a new automation, and taught the bot to listen for events and run that automation!</p>
+<h3 id="congratulations-youve-completed-the-getting-started-guide-for-atomist">Congratulations, you've completed the Getting Started guide for Atomist!<a class="headerlink" href="#congratulations-youve-completed-the-getting-started-guide-for-atomist" title="Permanent link">&para;</a></h3>
+<p>You've come a long way but to get even <em>more</em> out of your development automation here are some suggested next steps...</p>
+<ul>
+<li>Checking out the <a href="../../quick-starts">Quick Starts</a> for short introductions to a number of Atomist features.</li>
+<li>Get comfortable with writing and editing your development automation Rugs with the <a href="../../reference-docs/rug/rug-cli">Rug CLI</a>.</li>
+<li>Take a deep-dive through Rug using <code>@atomist</code> in with the <a href="">Rug Koans</a>.</li>
+</ul>
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../connect-atomist-to-ci/" title="Connect Atomist to CI" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Connect Atomist to CI
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../quick-starts/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Introduction
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            &copy; 2017 Atomist, Inc.
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/atomist" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/atomist" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://join.atomist.com/" class="md-footer-social__link fa fa-slack"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-f7ac33b6fb.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-74966852-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

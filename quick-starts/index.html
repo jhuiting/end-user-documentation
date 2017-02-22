@@ -1,0 +1,1215 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Atomist Developer Platform">
+      
+      
+      
+        <meta name="author" content="The Atomist Team">
+      
+      
+        <link rel="shortcut icon" href="../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.1, mkdocs-material-1.0.5">
+    
+    
+      
+        <title>Introduction - The Atomist Documentation</title>
+      
+    
+    
+      <script src="../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application-9c62e3c932.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-02ce7adcc2.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="green" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="The Atomist Documentation" class=" md-logo  md-header-nav__button">
+          
+            <img src="../images/atomist-logo-horiz-reversed.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Quick Starts
+                </span>
+              
+            
+            Introduction
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+              
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+            
+          </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <i class=" md-logo  md-nav__button">
+      
+        <img src="../images/atomist-logo-horiz-reversed.svg">
+      
+    </i>
+    The Atomist Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  <li class="md-nav__item">
+    
+      <a href=".." title="Welcome to Atomist" class="md-nav__link">
+        Welcome to Atomist
+      </a>
+    
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../getting-started/" title="Introduction" class="md-nav__link">
+        Introduction
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../getting-started/before-you-get-started/" title="Before You Get Started" class="md-nav__link">
+        Before You Get Started
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../getting-started/invite-atomist-to-slack/" title="Invite Atomist to Slack" class="md-nav__link">
+        Invite Atomist to Slack
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../getting-started/connect-atomist-to-github/" title="Connect Atomist to GitHub" class="md-nav__link">
+        Connect Atomist to GitHub
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../getting-started/putting-atomist-to-work/" title="Putting Atomist to Work on Your Projects" class="md-nav__link">
+        Putting Atomist to Work on Your Projects
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../getting-started/connect-atomist-to-ci/" title="Connect Atomist to CI" class="md-nav__link">
+        Connect Atomist to CI
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../getting-started/build-your-own-development-automation/" title="Build Your Own Development Automation" class="md-nav__link">
+        Build Your Own Development Automation
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Quick Starts
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-3">
+        Quick Starts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Introduction
+      </label>
+    
+    <a href="./" title="Introduction" class="md-nav__link md-nav__link--active">
+      Introduction
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-quick-starts" title="Introduction to Quick Starts" class="md-nav__link">
+    Introduction to Quick Starts
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atomist-button" title="Atomist Button" class="md-nav__link">
+    Atomist Button
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atomist-bot" title="Atomist Bot" class="md-nav__link">
+    Atomist Bot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-cli" title="Rug CLI" class="md-nav__link">
+    Rug CLI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-typescript" title="Rug TypeScript" class="md-nav__link">
+    Rug TypeScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more" title="More" class="md-nav__link">
+    More
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="buttons/" title="Buttons" class="md-nav__link">
+        Buttons
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="bot/" title="Atomist Bot" class="md-nav__link">
+        Atomist Bot
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="rug-cli/" title="Rug CLI" class="md-nav__link">
+        Rug CLI
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="rug-typescript/" title="Rug TypeScript" class="md-nav__link">
+        Rug TypeScript
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-4">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../rug/why-and-what-is-rug/" title="Why and What is Rug?" class="md-nav__link">
+        Why and What is Rug?
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../rug/rug-dsl/" title="Rug Language" class="md-nav__link">
+        Rug Language
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../rug/rug-archive/" title="What Goes in a Rug Archive?" class="md-nav__link">
+        What Goes in a Rug Archive?
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../rug/rug-lifecycle/" title="A Day in the Life of a Rug Archive" class="md-nav__link">
+        A Day in the Life of a Rug Archive
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Rug CLI
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-4-5">
+        Rug CLI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../rug/rug-cli/" title="Introduction" class="md-nav__link">
+        Introduction
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../rug/rug-cli/rug-cli-install/" title="Rug CLI Installation" class="md-nav__link">
+        Rug CLI Installation
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Reference Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-5">
+        Reference Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/" title="Introduction" class="md-nav__link">
+        Introduction
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-5-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/" title="Introduction" class="md-nav__link">
+        Introduction
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/rug-tests/" title="Rug Tests" class="md-nav__link">
+        Rug Tests
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/rug-editors/" title="Rug Editors" class="md-nav__link">
+        Rug Editors
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/rug-generators/" title="Rug Generators" class="md-nav__link">
+        Rug Generators
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/rug-templates/" title="Rug Templates" class="md-nav__link">
+        Rug Templates
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/rug-predicates/" title="Rug Predicates" class="md-nav__link">
+        Rug Predicates
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/rug-path-expressions/" title="Rug Path Expressions" class="md-nav__link">
+        Rug Path Expressions
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/rug-microgrammars/" title="Rug Microgrammars" class="md-nav__link">
+        Rug Microgrammars
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2-9" type="checkbox" id="nav-5-2-9">
+    
+    <label class="md-nav__link" for="nav-5-2-9">
+      Rug Language Extensions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-5-2-9">
+        Rug Language Extensions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/" title="Introduction" class="md-nav__link">
+        Introduction
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-clj-project/" title="CljProject" class="md-nav__link">
+        CljProject
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-c-sharp-file/" title="CSharpFile" class="md-nav__link">
+        CSharpFile
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-docker-file/" title="DockerFile" class="md-nav__link">
+        DockerFile
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-elm-module/" title="ElmModule" class="md-nav__link">
+        ElmModule
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-every-pom/" title="EveryPom" class="md-nav__link">
+        EveryPom
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-file/" title="File" class="md-nav__link">
+        File
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-java-project/" title="JavaProject" class="md-nav__link">
+        JavaProject
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-java-source/" title="JavaSource" class="md-nav__link">
+        JavaSource
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-java-type/" title="JavaType" class="md-nav__link">
+        JavaType
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-json/" title="Json" class="md-nav__link">
+        Json
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-line/" title="Line" class="md-nav__link">
+        Line
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-pom/" title="Pom" class="md-nav__link">
+        Pom
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-project/" title="Project" class="md-nav__link">
+        Project
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-properties/" title="Properties" class="md-nav__link">
+        Properties
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-python-file/" title="PythonFile" class="md-nav__link">
+        PythonFile
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-python-requirements-txt/" title="PythonRequirementsTxt" class="md-nav__link">
+        PythonRequirementsTxt
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-rug-archive-project/" title="RugArchiveProject" class="md-nav__link">
+        RugArchiveProject
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-rug-file/" title="RugFile" class="md-nav__link">
+        RugFile
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-scala-file/" title="ScalaFile" class="md-nav__link">
+        ScalaFile
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-services/" title="Services" class="md-nav__link">
+        Services
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-spring-boot-project/" title="SpringBootProject" class="md-nav__link">
+        SpringBootProject
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-xml/" title="Xml" class="md-nav__link">
+        Xml
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/extensions/rug-extension-yml/" title="Yml" class="md-nav__link">
+        Yml
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/escape/rug-javascript/" title="Escaping Rug into JavaScript" class="md-nav__link">
+        Escaping Rug into JavaScript
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/rug-cli-commands/" title="Rug CLI Command Reference" class="md-nav__link">
+        Rug CLI Command Reference
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/rug/rug-conventions/" title="Rug Conventions" class="md-nav__link">
+        Rug Conventions
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../reference-docs/system-integrations/" title="Atomist Integrations" class="md-nav__link">
+        Atomist Integrations
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-quick-starts" title="Introduction to Quick Starts" class="md-nav__link">
+    Introduction to Quick Starts
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atomist-button" title="Atomist Button" class="md-nav__link">
+    Atomist Button
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atomist-bot" title="Atomist Bot" class="md-nav__link">
+    Atomist Bot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-cli" title="Rug CLI" class="md-nav__link">
+    Rug CLI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-typescript" title="Rug TypeScript" class="md-nav__link">
+    Rug TypeScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more" title="More" class="md-nav__link">
+    More
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+               
+              
+                
+                  <h1>Introduction</h1>
+                
+                <h2 id="introduction-to-quick-starts">Introduction to Quick Starts<a class="headerlink" href="#introduction-to-quick-starts" title="Permanent link">&para;</a></h2>
+<p>Quick Starts get you up and rolling with Atomist as fast as possible.</p>
+<h3 id="atomist-button">Atomist Button<a class="headerlink" href="#atomist-button" title="Permanent link">&para;</a></h3>
+<p>Atomist Buttons let you start a project super-quick: one click to get started!</p>
+<p><a href="./buttons/">Buttons Quick Start</a></p>
+<h3 id="atomist-bot">Atomist Bot<a class="headerlink" href="#atomist-bot" title="Permanent link">&para;</a></h3>
+<p>The Bot awaits your instructions in our Atomist Community Slack.</p>
+<p><a href="./bot/">Bot Quick Start</a></p>
+<h3 id="rug-cli">Rug CLI<a class="headerlink" href="#rug-cli" title="Permanent link">&para;</a></h3>
+<p>Now you can try automated code changes with Rug on your local file
+system. Run any publicly published generator or editor. Make your own
+Rugs and try them out!</p>
+<p><a href="./rug-cli/">Rug CLI Quick Start</a></p>
+<h3 id="rug-typescript">Rug TypeScript<a class="headerlink" href="#rug-typescript" title="Permanent link">&para;</a></h3>
+<p>You can use TypeScript to create your Rugs. This Quick Start will show you how:</p>
+<p><a href="./rug-typescript/">Rug TypeScript Quick Start</a></p>
+<h3 id="more">More<a class="headerlink" href="#more" title="Permanent link">&para;</a></h3>
+<p>To hear about new Quick Starts as our tools roll out,
+follow <a href="https://twitter.com/atomist">@atomist</a> on Twitter
+and <a href="https://medium.com/the-composition">The Composition</a> on
+Medium. Or even better...</p>
+<p>Get rolling with Atomist by signing up to our community:</p>
+<ul>
+<li><a href="https://join.atomist.com">Join the Atomist Community</a></li>
+</ul>
+<p>There, you'll get announcements on new features as we release them and
+also get to chat with the core Atomist team about your experience with
+our tools.</p>
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../getting-started/build-your-own-development-automation/" title="Build Your Own Development Automation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Build Your Own Development Automation
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="buttons/" title="Buttons" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Buttons
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            &copy; 2017 Atomist, Inc.
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/atomist" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/atomist" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://join.atomist.com/" class="md-footer-social__link fa fa-slack"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application-f7ac33b6fb.js"></script>
+      <script>app.initialize({url:{base:".."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-74966852-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>
